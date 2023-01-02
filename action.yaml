@@ -1,0 +1,18 @@
+name: scp-deploy
+description: 远程部署
+inputs:
+  username:
+    description: 用户名
+    required: true
+    default: root
+  sceret:
+    description: 密码
+    required: true
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
+runs:
+  using: node16
+  main: dist/index.js
+  pre: npm ci && npm run build
+
